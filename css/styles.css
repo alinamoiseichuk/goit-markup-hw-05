@@ -530,18 +530,24 @@ height: 40px;
 border-radius: 4px;
 border: 1px solid #FFF;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-background:#2E2F42;
+background-color: transparent;
 color:  #FFF;
 font-size: 12px;
-line-height: 2.00; 
+line-height: 1.50; 
 letter-spacing: 0.04em;
+padding-left: 16px;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.icon-btn {
+margin-left: 16px;
 }
 
 .button-footer {
 border-radius: 4px;
 background: #4D5AE5;
 border: none;
-width: 165px;
+min-width: 165px;
 height: 40px;
 padding: 8px 24px;
 color: #FFF;
@@ -553,7 +559,6 @@ letter-spacing: 0.04em;
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 16px; 
 cursor: pointer;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -594,7 +599,9 @@ width: 408px;
 min-height: 584px;
 border-radius: 4px;
 background-color: #FCFCFC;
-padding: 24px;
+padding: 72px 27px 24px 24px;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2); 
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-close {
@@ -606,16 +613,24 @@ height: 24px;
 border-radius: 50%;
 background-color:#E7E9FC; 
 border-color: rgba(0, 0, 0, 0.10);
+border: 1px solid rgba(0, 0, 0, 0.1);
 display: flex;
 justify-content: center;
 align-items: center;
-transition: background-color, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+padding: 0;
+cursor: pointer;
+transition: background-color, 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-close:hover,
 .button-close:focus {
 background-color:  #404BBF;
 fill:#fff;
+border: none;
+}
+
+.icon-close {
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-text {
@@ -625,7 +640,6 @@ font-size: 16px;
 font-weight: 500;
 line-height: 1.50;
 letter-spacing: 0.02em;
-margin-top: 72px;
 margin-bottom: 16px;
 }
 
@@ -638,7 +652,7 @@ display: block;
 margin-bottom: 4px;   
 color: #8E8F99;
 font-size: 12px;
-line-height: 1.16;
+line-height: 1.17;
 letter-spacing: 0.04em;
 }
 
@@ -673,12 +687,16 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 fill: #4D5AE5;
 }
 
+.wrapper-comment {
+margin-bottom: 16px;
+}
+
 .modal-comment {
 width: 360px; 
 height: 120px; 
 color: rgba(46, 47, 66, 0.40);
 font-size: 12px;
-line-height: 1.16;
+line-height: 1.17;
 letter-spacing: 0.04em;  
 background-color: transparent;
 border-radius: 4px;
@@ -686,7 +704,6 @@ border: 1px solid rgba(46, 47, 66, 0.40);
 resize: none;
 outline: 0px solid transparent;
 padding: 8px 16px;
-margin-bottom: 16px;
 transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -694,10 +711,14 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 border-color: #4D5AE5;  
 }
 
+.checkbox-privacy {
+margin-bottom: 24px;   
+}
+
 .checkbox-lable {
 color: #8E8F99;
 font-size: 12px;
-line-height: 1.16; 
+line-height: 1.17; 
 letter-spacing: 0.04em;
 }
 
@@ -717,29 +738,31 @@ width: 16px;
 height: 16px; 
 border: 1px solid rgba(46, 47, 66, 0.40);
 cursor: pointer;
-border-radius: 6px;
+border-radius: 2px;
 margin-right: 8px;
+fill: transparent;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-privacy-policy:checked 
+.checkbox-privacy:checked 
 + .checkbox-lable 
 > .modal-checkbox {
-background-color: #4D5AE5;
-border-color: #4D5AE5;
+background-color: #404bbf;  
+border: none;
+fill: #F4F4FD;
 }
 
-.checkbox-privacy-policy:focus 
+.checkbox-privacy:focus 
 + .checkbox-lable 
 > .modal-checkbox {
 outline: 2px solid #4D5AE5;
 }
 
 .icon-click {
-fill: #F4F4FD;
 opacity: 0;
 }
 
-.checkbox-privacy-policy:checked 
+.checkbox-privacy:checked 
 + .checkbox-lable .icon-click {
 opacity: 1;
 } 
@@ -753,14 +776,13 @@ font-weight: 500;
 line-height: 1.50; 
 letter-spacing: 0.04em;
 padding: 16px 32px;
-width: 169px;
+min-width: 169px;
 height: 56px;
 border-radius: 4px;
 background: #4D5AE5;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 border: none;
 cursor: pointer;
-margin-top: 24px;
 margin-right: auto;
 margin-left: auto;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -425,7 +425,7 @@
         </label>
         <button class="button-footer" type="submit">
             Subscribe
-            <svg width="24" height="24">
+            <svg class="icon-btn" width="24" height="24">
                 <use href="./images/icons.svg#icon-frame-telegram"></use>
             </svg>
         </button>
@@ -437,8 +437,8 @@
     <!-- BACKDROP -->
     <div class="backdrop is-open">
     <div class="modal">
-    <button class="button-close" type="submit">
-    <svg 
+    <button class="button-close" type="button">
+    <svg class="icon-close"
     width="8"
     height="8"
     aria-label="icon-close">
@@ -460,7 +460,7 @@
         <svg 
         class="icons-modal"
         width="18"
-        height="18"
+        height="24"
         aria-label="icon-user">
         <use href="./images/icons.svg#icon-user"></use>
         </svg>
@@ -503,7 +503,7 @@
         </svg>
         </div>
     </div>
-    <div>
+    <div class="wrapper-comment">
         <label class="modal-lable" for="user-comment">Comment</label>
         <textarea 
         class="modal-comment"
@@ -513,17 +513,17 @@
         required>
         </textarea>
     </div>
-    <div>
+    <div class="checkbox-privacy">
         <input
-        class="checkbox-privacy-policy visually-hidden"
-        id="user-privacy-policy"
-        name="user-privacy-policy"
+        class="checkbox-privacy visually-hidden"
+        id="user-privacy"
+        name="user-privacy"
         type="checkbox"
         value="true"
         required/>
         <label 
         class="checkbox-lable" 
-        for="user-privacy-policy">
+        for="user-privacy">
         <span class="modal-checkbox">
             <svg
             class="icon-click"
